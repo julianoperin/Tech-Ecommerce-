@@ -16,12 +16,14 @@ export default function Header() {
               <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/products">Product</Link>
+              <Link to="/products">Products</Link>
             </li>
           </div>
           <div>
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="/login">
+                Login <i className="fas fa-user-plus"></i>
+              </Link>
             </li>
             <li>
               <Link to="/cart">
