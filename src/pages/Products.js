@@ -2,12 +2,8 @@ import React, { useContext } from "react";
 import { ProductContext } from "../context/products";
 
 export default function Products() {
-  const { greeting } = useContext(ProductContext);
-  const { product } = useContext(ProductContext);
+  const { loading, products } = useContext(ProductContext);
+  console.log(products);
 
-  return (
-    <h1>
-      hello from products page {greeting} {product.title}
-    </h1>
-  );
+  return <h1>hello from pppproducts page</h1>;
 }
