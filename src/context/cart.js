@@ -46,12 +46,36 @@ function CartProvider({ children }) {
       removeItem(id);
       return;
     } else {
+      const newCart = [...cart].map((item) => {
+        return item.id === id
+          ? { ...item, amount: item.amount - 1 }
+          : { ...item };
+      });
+      setCart(newCart);
     }
   };
   //! Add to cart
-  const addToCart = (id) => {};
+  const addToCart = (product) => {
+    const {
+      id,
+      image: { url },
+      title,
+      price,
+    } = product;
+    const item = [...cart].find((item) => item.id === id);
+    if (item) {
+      increaseAmount(id);
+      return;
+    } else {
+      const newItem = { id, image: url, title, price, amount: 1 };
+      const newCart = [...cart, newItem];
+      setCart(newCart);
+    }
+  };
   //! Clear Cart
-  const clearCart = (id) => {};
+  const clearCart = (id) => {
+    setCart([]);
+  };
 
   return (
     <CartContext.Provider
