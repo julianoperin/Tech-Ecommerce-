@@ -23,7 +23,7 @@ export default function CartItem({ id, image, title, price, amount }) {
             removeItem(id);
           }}
         >
-          Remove
+          Remove <i className="fas fa-trash-alt"></i>
         </button>
       </div>
       <div>

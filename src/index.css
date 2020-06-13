@@ -5,6 +5,7 @@ Fonts
 */
 @import url("https://fonts.googleapis.com/css?family=Catamaran:300,400|Kaushan+Script&display=swap");
 /* 
+font-family: 'Montserrat', sans-serif;
 ====== 
 Variables 
 ======
@@ -14,8 +15,8 @@ Variables
   /* --primaryDarkColor: #4e1d51; */
   --primaryColor: #f15025;
   --primaryDarkColor: #c02c03;
-  --primaryFont: sans-serif;
-  --slantedFont: "Kaushan Script", cursive;
+  --primaryFont: "Montserrat", sans-serif;
+  --slantedFont: cursive;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBackground: #ececec;
@@ -25,7 +26,7 @@ Variables
   --darkGrey: #afafaf;
   --mainRed: #bd0303;
   --mainTransition: all 0.3s linear;
-  --mainSpacing: 0.3rem;
+  --mainSpacing: 0.1rem;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --mainBorderRadius: 0.25rem;
@@ -465,6 +466,7 @@ Cart Link
   border-radius: 50%;
   font-size: 1rem;
   color: var(--mainWhite);
+  z-index: -1;
 }
 /* 
 ====== 
