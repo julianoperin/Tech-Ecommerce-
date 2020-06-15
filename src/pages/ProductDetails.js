@@ -38,6 +38,4 @@ export default function ProductDetails() {
       </section>
     );
   }
-
-  return <h1>hello from produasdasdasdct details page. {product.id} </h1>;
 }
