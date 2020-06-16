@@ -490,6 +490,11 @@ Login Form
 .form-control label {
   display: block;
 }
+
+input:focus {
+  outline: none;
+}
+
 .form-control input {
   width: 100%;
   border: none;
