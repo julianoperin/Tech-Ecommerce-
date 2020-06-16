@@ -13,7 +13,7 @@ Variables
 :root {
   /* --primaryColor: #9e3aa3; */
   /* --primaryDarkColor: #4e1d51; */
-  --primaryColor: #f15025;
+  --primaryColor: red;
   --primaryDarkColor: #c02c03;
   --primaryFont: "Montserrat", sans-serif;
   --slantedFont: cursive;

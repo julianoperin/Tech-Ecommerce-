@@ -6,22 +6,50 @@ import registerUser from "../strapi/registerUser";
 
 // Handle user
 import { useHistory } from "react-router-dom";
+import { UserContext } from "../context/user";
 
 const Login = () => {
   const history = useHistory();
   //setup user context
+  const { userLogin } = React.useContext(UserContext);
 
   //state values
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("default");
-  const [isMember, setMember] = useState(true);
+  const [isMember, setIsMember] = useState(true);
 
   let isEmpty = !email || !password || !username;
 
-  const toggleMember = () => {};
+  const toggleMember = () => {
+    setIsMember((prevMember) => {
+      let isMember = !prevMember;
+      isMember ? setUsername("default") : setUsername("");
+      return isMember;
+    });
+  };
 
-  const handleSubmit = async (e) => {};
+  const handleSubmit = async (e) => {
+    //! Alert
+    e.preventDefault();
+    let response;
+    if (isMember) {
+      response = await loginUser({ email, password });
+    } else {
+      response = await registerUser({ email, password, username });
+    }
+    if (response) {
+      const {
+        jwt: token,
+        user: { username },
+      } = response.data;
+      const newUser = { token, username };
+      userLogin(newUser);
+      history.push("/products");
+    } else {
+      // show alert
+    }
+  };
 
   return (
     <section className="form section">
